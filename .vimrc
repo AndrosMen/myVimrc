@@ -1,15 +1,28 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=700
 
 " Enable filetype plugins
-" filetype plugin on
+filetype plugin on
 " filetype indent on
 
 " Set to auto read when a file is changed from the outside
-set autoread
+set autoread                                                                                                                                                                                                 
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -33,10 +46,6 @@ set wildmenu
 
 " Redraw only when needed
 set lazyredraw
-
-" Move vertically by visual line
-nnoremap j gj
-nnoremap k gk
 
 " Move to beginning/end of line
 nnoremap B ^
@@ -87,8 +96,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=3
+set tabstop=3
 
 set ai "Auto indent
 set si "Smart indent
@@ -104,4 +113,4 @@ set whichwrap+=<,>,h,l
 
 " Save session
 nnoremap <leader>s :mksession<CR>
-
+                                   
