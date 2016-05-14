@@ -5,22 +5,23 @@
 # some arguments don't have a corresponding value to go with it such
 # as in the --default example).
 # note: if this is set to > 0 the /etc/hosts part is not recognized ( may be a bug )
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ISVIRTUAL=0
+INSTJARVIS=0
 
-while [[ $# > 1 ]]
+while [[ $# > 0 ]]
 do
 key="$1"
 
-
 case $key in
-	-jarvis)
-	INSTJARVIS=1
-	shift # past argument
-	;;
-	-virtual)
-	ISVIRTUAL=1
-	shift # past argument
-	;;
+   -jarvis)
+   INSTJARVIS=1
+   shift # past argument
+   ;;
+   -virtual)
+   ISVIRTUAL=1
+   shift # past argument
+   ;;
 esac
 shift # past argument or value
 done
@@ -28,7 +29,7 @@ done
 sudo apt-get update 
 sudo apt-get install dconf-cli vim -y
 if [ $ISVIRTUAL -eq 1 ];then
-	sudo apt-get install virtualbox-guest-x11
+   sudo apt-get install virtualbox-guest-x11
 fi 
 
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gitConfs/gnomeSolarized
@@ -36,6 +37,6 @@ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gi
 bash $DIR/setVim.sh
 
 if [ $INSTJARVIS -eq 1 ];then
-	bash setJarvis.sh
+   bash setJarvis.sh
 fi
 
