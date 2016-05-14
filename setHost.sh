@@ -25,7 +25,7 @@ done
 
 sudo apt-get update 
 sudo apt-get install dconf-cli -y
-if [ ${ISVIRTUAL} eq 1]; then
+if [ $ISVIRTUAL eq 1 ] then
 	sudo apt-get install virtualbox-guest-x11
 fi 
 
@@ -33,6 +33,6 @@ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git ~/.gi
 ~/.gitConfs/gnomeSolarized/install.sh -s dark_alternative -p Default
 bash ~/.gitConfs/setVim.sh
 
-if [ ${ISVIRTUAL} eq 1]; then
+if [ $INSTJARVIS -eq 1 ] then
 	bash setJarvis.sh
 fi
